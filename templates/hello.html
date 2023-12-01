@@ -14,6 +14,16 @@
             <p class="fs-5">
                 What is your request?
             </p>
+            <form method="post" action="{{url_for('engine.handle_query')}}">
+              <div class="col-md-6 mx-auto text-center">
+                  <label for="question" class="form-label fw-bold fs-5">question</label>
+                  <!-- <p class="lead mb-2">question</p> -->
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                      <input type="text" class="form-control" id="question" name="question" style="max-width: 256px;">
+                    </div>            
+              </div>
+          </form>
+  
             <a href="{{ url_for('engine.index') }}" class="btn btn-primary btn-lg px-4 gap-3">Back home</a>
           </div>
      </main>      

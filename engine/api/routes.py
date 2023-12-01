@@ -33,8 +33,8 @@ def hello():
 
 @api_blueprint.route('/handle-query', methods=['POST'])
 def handle_query():
-    question = request.json['question']
-    chat_history = request.json['chatHistory']
+    name = request.form.get('question')
+    chat_history = None # TODO: get it from session
     
     # Get the most similar chunks from Pinecone
     #context_chunks = pinecone_service.get_most_similar_chunks_for_query(question, PINECONE_INDEX_NAME)
